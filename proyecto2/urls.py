@@ -20,6 +20,8 @@ from django.urls import path
 from proyecto2.views import saludar
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("saludo/", saludar),
+    path("admin/", admin.site.urls),
+    path ("saludo/" ,saludar),
 ]
+
+
