@@ -21,7 +21,8 @@ from proyecto2.views import saludar
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path ("saludo/" ,saludar),
+    path("saludo/" ,saludar),
+    path("saludo-html/", saludar_con_html),
 ]
 
 

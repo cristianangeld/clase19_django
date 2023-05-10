@@ -1,7 +1,6 @@
 from django.db import models
 from django.forms import BooleanField
-
-class curso(models.Model):
+class Curso(models.Model):
     nombre = models.CharField(max_length=64)
     comision = models.IntegerField()
 
