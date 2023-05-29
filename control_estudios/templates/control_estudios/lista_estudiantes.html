@@ -1,0 +1,7 @@
+{% extends "control_estudios/base.html" %} {% block contenido %}
+Lista de estudiantes
+Crear estudiante
+{% for alumno in object_list %} {% endfor %}
+ID 	Nombre 	Apellido 			
+{{ alumno.id }} 	{{ alumno.nombre }} 	{{ alumno.apellido }} 	Ver 	Editar 	
+{% endblock contenido %} 

@@ -1,0 +1,11 @@
+{% extends "control_estudios/base.html" %} {% block contenido %}
+Lista de cursos
+Crear curso
+
+{% csrf_token %}
+
+{% for curso in cursos %} {% endfor %}
+ID 	Nombre 	Comision 		
+{{ curso.id }} 	{{ curso.nombre }} 	{{ curso.comision }} 	Editar 	
+{% csrf_token %}
+{% endblock contenido %} 

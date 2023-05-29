@@ -1,0 +1,3 @@
+{% extends "control_estudios/base.html" %} {% block contenido %}
+{% csrf_token %} {{ formulario.as_p }} {{ formulario.errors }}
+{% endblock contenido %} 
