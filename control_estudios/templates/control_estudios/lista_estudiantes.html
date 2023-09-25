@@ -1,7 +1,26 @@
-{% extends "control_estudios/base.html" %} {% block contenido %}
-Lista de estudiantes
-Crear estudiante
-{% for alumno in object_list %} {% endfor %}
-ID 	Nombre 	Apellido 			
-{{ alumno.id }} 	{{ alumno.nombre }} 	{{ alumno.apellido }} 	Ver 	Editar 	
-{% endblock contenido %} 
+<h1>Lista de estudiantes</h1>
+<a href="{% url 'crear_estudiante' %}">Crear estudiante</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for alumno in object_list %}
+            <tr>
+                <td>{{ alumno.id }}</td>
+                <td>{{ alumno.nombre }}</td>
+                <td>{{ alumno.apellido }}</td>
+                <td>
+                    <a href="{% url 'ver_estudiante' alumno.id %}">Ver</a>
+                    <a href="{% url 'editar_estudiante' alumno.id %}">Editar</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

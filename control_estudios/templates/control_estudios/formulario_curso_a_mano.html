@@ -1,7 +1,16 @@
-{% extends "control_estudios/base.html" %} {% block contenido %}
-{% csrf_token %}
+{% extends "control_estudios/base.html" %}
 
-Nombre del curso
+{% block contenido %}
+    <form method="post">
+        {% csrf_token %}
+        
+        <label for="id_nombre_curso">Nombre del curso:</label>
+        <input type="text" id="id_nombre_curso" name="nombre_curso">
 
-Comision
-{% endblock contenido %} 
+        <label for="id_comision">Comisión:</label>
+        <input type="text" id="id_comision" name="comision">
+
+        <input type="submit" value="Guardar">
+    </form>
+    <a href="{% url 'lista_cursos' %}">Volver lista</a>
+{% endblock contenido %}

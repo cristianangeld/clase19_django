@@ -1,11 +1,34 @@
-{% extends "control_estudios/base.html" %} {% block contenido %}
-Lista de cursos
-Crear curso
+{% extends "control_estudios/base.html" %}
 
-{% csrf_token %}
+{% block contenido %}
+    <h1>Lista de cursos</h1>
+    <a href="{% url 'crear_curso' %}">Crear curso</a>
 
-{% for curso in cursos %} {% endfor %}
-ID 	Nombre 	Comision 		
-{{ curso.id }} 	{{ curso.nombre }} 	{{ curso.comision }} 	Editar 	
-{% csrf_token %}
-{% endblock contenido %} 
+    {% csrf_token %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Comisión</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for curso in cursos %}
+                <tr>
+                    <td>{{ curso.id }}</td>
+                    <td>{{ curso.nombre }}</td>
+                    <td>{{ curso.comision }}</td>
+                    <td>
+                        <a href="{% url 'editar_curso' curso.id %}">Editar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'lista_cursos' %}">Volver lista</a>
+{% endblock contenido %}
+
+

@@ -5,7 +5,8 @@
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
-  <p>Â¿Estas seguro deseas eliminar {{object}}?</p>
+  <p>¿Estás seguro de que deseas eliminar "{{ object }}"?</p>
+
   <input type="submit" value="Eliminar" />
 </form>
 
@@ -13,3 +14,4 @@
 <a href="{% url 'lista_estudiantes' %}">Volver lista</a>
 
 {% endblock contenido %}
+

@@ -15,8 +15,7 @@ class Estudiante(models.Model):
     email = models.EmailField(blank=True)
     telefono = models.CharField(max_length=20, blank=True)
     dni = models.CharField(max_length=32)
-    fecha_nacimiento = models.DateField(null=True)
-    cursos = models.ManyToManyField(Curso)  # Relación ManyToMany con el modelo Curso
+    cursos = models.ManyToManyField(Curso)  
 
     def __str__(self):
         return f"{self.nombre}, {self.apellido}"
